@@ -1,0 +1,34 @@
+apiVeriosn: apps/v1
+kind: Deployment
+metadata:
+  name: kube-deploy
+  labels:
+    roy:aro
+spec:
+  replicas: 4
+  selector:
+    mathcLabels:
+     roy:aro
+  template:
+    metadata:
+      labels:
+        roy:aro
+    spec:
+      containers:
+      - name: kube-pod
+        image: arockiyamarry/project
+        ports:
+        - containerPort: 8080
+---
+apiVerion:v1
+kind: Service
+metadata:
+  name: load-balance
+spec:
+  type: loadBalancer
+  selector:
+    roy: aro
+  ports:
+  - protocol: TCP
+  port:80
+  targetPort: 8080
