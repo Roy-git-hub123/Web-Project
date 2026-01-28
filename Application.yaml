@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: kube-deploy
   labels:
-    roy:aro
+    roy: aro
 spec:
   replicas: 4
   selector:
     matchLabels:
-     roy:aro
+     roy: aro
   template:
     metadata:
       labels:
-        roy:aro
+        roy: aro
     spec:
       containers:
       - name: kube-pod
@@ -29,6 +29,6 @@ spec:
   selector:
     roy: aro
   ports:
-  - protocol: TCP
-  port: 80
-  targetPort: 8080
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
