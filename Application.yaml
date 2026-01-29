@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: kube-pod
-        image: arockiyamarry/project
+        image: arockiyamarry/proj
         ports:
         - containerPort: 8080
 ---
